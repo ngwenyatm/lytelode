@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: loadshedding-frontend
+    env: static
+    plan: free
+    branch: main
+    buildCommand: npm install && npm run build
+    publishDir: build
+    envVars:
+      - key: REACT_APP_API_URL
+        value: https://your-backend-service.onrender.com
