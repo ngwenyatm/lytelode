@@ -12,4 +12,12 @@ export default defineConfig({
       },
     },
   },
+  // Added build configuration for production
+  build: {
+    outDir: 'dist',
+    sourcemap: false, 
+  },
+  define: {
+    'process.env.VITE_API_BASE_URL': JSON.stringify(process.env.VITE_API_BASE_URL),
+  }
 })
