@@ -11,7 +11,7 @@ load_dotenv()
 app = Flask(__name__)
 
 # Allow requests from the frontend development server
-CORS(app, origins=["http://localhost:3000"])
+CORS(app, origins=["http://localhost:3000","https://lytelode-2.onrender.com"])
 
 # Configuration - get API key from environment
 ESKOM_API_KEY = os.environ.get('ESKOM_API_KEY')
