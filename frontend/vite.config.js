@@ -7,17 +7,14 @@ export default defineConfig({
     port: 3000,
     proxy: {
       '/api': {
-        target: 'https://lytelode-1.onrender.com',
+        target: 'http://localhost:5000', // Changed to local Flask server
         changeOrigin: true,
+        secure: false,
       },
     },
   },
-  // Added build configuration for production
   build: {
     outDir: 'dist',
     sourcemap: false, 
   },
-  define: {
-    'process.env.VITE_API_BASE_URL': JSON.stringify(process.env.VITE_API_BASE_URL),
-  }
 })
